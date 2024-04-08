@@ -4,7 +4,8 @@
 	"actions": {
 		"index": {
 			"index": true,
-			"auto": {" render": "page" }
+			"auto": { "render": "page" },
+			"view": "index.view"
 		}
 	},
 	"dialogs": {

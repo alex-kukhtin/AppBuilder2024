@@ -5,23 +5,42 @@
 			"name": "Agents",
 			"schema": "cat",
 			"fields": [
-				{ "name": "Code", "length": 12 },
-				{ "name": "FullName", "index": false }
+				{
+					"name": "Code",
+					"length": 12
+				},
+				{
+					"name": "FullName",
+					"index": false
+				}
 			]
 		},
 		"Unit": {
 			"name": "Units",
 			"schema": "cat",
 			"fields": [
-				{ "name": "Short", "length": 8 }
+				{
+					"name": "Short",
+					"length": 8
+				}
 			]
 		},
 		"Item": {
-			"table": "cat.Items",
+			"schema": "cat",
+			"name": "Items",
 			"fields": [
-				{ "name": "SKU", "length": 32 },
-				{ "name": "BarCode", "index": false }
+				{
+					"name": "SKU",
+					"length": 32
+				},
+				{
+					"name": "BarCode",
+					"length": 32
+				}
 			]
 		}
+	},
+	"documents": {
+
 	}
 }

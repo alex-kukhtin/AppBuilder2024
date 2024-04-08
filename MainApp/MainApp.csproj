@@ -26,11 +26,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="styles.xaml" />
-	</ItemGroup>
-
-
-	<ItemGroup>
 		<Content Update="**\*.json" CopyToPublishDirectory="Never" CopyToOutputDirectory="Never" />
 	</ItemGroup>
 
@@ -38,10 +33,5 @@
 		<AdditionalFiles Include="$(ProjectPath)" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Content Update="styles.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </Content>
-	</ItemGroup>
 
 </Project>

@@ -1,0 +1,10 @@
+﻿<!-- Automatic index page -->
+<IndexPage xmlns="clr-namespace:A2v10.Xaml.Auto;assembly=A2v10.Xaml"
+		   Source="Agents">
+	<DataColumn Data="Id" Role="Id" Header="#"/>
+	<DataColumn Data="Code" Fit="True" Header="Код ЄДРПОУ"/>
+	<DataColumn Data="Name" MaxChars="50" />
+	<DataColumn Data="FullName" MaxChars="50" Sort="False"/>
+	<DataColumn Data="Memo" MaxChars="50"/>
+</IndexPage>
+	

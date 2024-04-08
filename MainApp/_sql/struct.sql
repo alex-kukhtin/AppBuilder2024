@@ -37,4 +37,24 @@ create table cat.Agents
 );
 go
 
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.SEQUENCES where SEQUENCE_SCHEMA = N'cat' and SEQUENCE_NAME = N'SQ_Items')
+	create sequence cat.SQ_Items as bigint start with 1000 increment by 1;
+go
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA=N'cat' and TABLE_NAME=N'Items')
+create table cat.Items
+(
+	Id bigint not null
+		constraint DF_Items_Id default(next value for cat.SQ_Items)
+		constraint PK_Items primary key,
+	[Void] bit not null
+		constraint DF_Items_Void default(0),
+	[Name] nvarchar(255),
+	[Memo] nvarchar(255),
+	-- Custom fields
+	[SKU] nvarchar(32),
+	[BarCode] nvarchar(255)
+);
+go
 
