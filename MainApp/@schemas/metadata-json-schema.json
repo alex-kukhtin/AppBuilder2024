@@ -1,0 +1,46 @@
+﻿{
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"$version": "10.0.7965",
+	"title": "JSON Schema for metadata.json",
+	"type": "object",
+
+	"definitions": {
+		"field": {
+			"type": "object",
+			"properties": {
+				"name": { "type": "string" },
+				"length": { "type": "integer", "default": 255 },
+				"index": {"type": "boolean", "default": true },
+				"sort": {"type": "boolean", "default": true },
+				"search": {"type": "boolean", "default": true },
+				"edit": {"type": "boolean", "default": true }
+			}
+		},
+		"table": {
+			"type": "object",
+			"properties": {
+				"name": { "type": "string" },
+				"schema": {"type": "string" },
+				"fields": {
+					"type": "array",
+					"items": { "$ref": "#/definitions/field" }
+				}
+			}
+		}
+	},
+
+	"properties": {
+		"catalogs": {
+			"type": "object",
+			"patternProperties": {
+				".+": { "$ref": "#/definitions/table" }
+			}
+		},
+		"documents": {
+			"type": "object",
+			"patternProperties": {
+				".+": { "$ref": "#/definitions/table" }
+			}
+		}
+	}
+}

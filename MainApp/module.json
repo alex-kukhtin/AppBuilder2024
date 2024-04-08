@@ -1,0 +1,7 @@
+{
+	"$schema": "@schemas/model-json-schema.json#",
+	"id": "A8867E60-E23A-4B1F-87E9-63320168D83A",
+	"name": "AppBuilder.MainApp",
+	"description": "AppBuilder 2024 Main module",
+	"copyright": "Copyright © 2024 Oleksandr Kukhtin. All rights reserved."
+}

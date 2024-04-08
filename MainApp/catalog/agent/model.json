@@ -1,0 +1,14 @@
+{
+	"$schema": "../../@schemas/model-json-schema.json#",
+	"model": "Catalog.Agent",
+	"actions": {
+		"index": {
+			"index": true,
+			"auto": {" render": "page" }
+		}
+	},
+	"dialogs": {
+		"edit": {			"auto": {"render": "dialog"}
+		}
+	}
+}
