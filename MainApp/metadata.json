@@ -16,8 +16,8 @@
 			]
 		},
 		"Unit": {
-			"name": "Units",
 			"schema": "cat",
+			"name": "Units",
 			"fields": [
 				{
 					"name": "Short",
@@ -36,11 +36,18 @@
 				{
 					"name": "BarCode",
 					"length": 32
+				},
+				{
+					"name": "Unit",
+					"ref": "Catalog.Units"
 				}
 			]
 		}
 	},
 	"documents": {
+
+	},
+	"tables": {
 
 	}
 }

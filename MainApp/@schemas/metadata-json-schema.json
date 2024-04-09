@@ -1,6 +1,6 @@
 ﻿{
 	"$schema": "http://json-schema.org/draft-04/schema",
-	"$version": "10.0.7965",
+	"$version": "10.1.8276",
 	"title": "JSON Schema for metadata.json",
 	"type": "object",
 
@@ -9,7 +9,9 @@
 			"type": "object",
 			"properties": {
 				"name": { "type": "string" },
+				"type": { "type": "string", "enum": ["string", "money", "date"] },
 				"length": { "type": "integer", "default": 255 },
+				"ref": { "type": "string" },
 				"index": {"type": "boolean", "default": true },
 				"sort": {"type": "boolean", "default": true },
 				"search": {"type": "boolean", "default": true },
@@ -37,6 +39,12 @@
 			}
 		},
 		"documents": {
+			"type": "object",
+			"patternProperties": {
+				".+": { "$ref": "#/definitions/table" }
+			}
+		},
+		"tables": {
 			"type": "object",
 			"patternProperties": {
 				".+": { "$ref": "#/definitions/table" }
