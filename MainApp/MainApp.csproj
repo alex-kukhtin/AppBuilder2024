@@ -26,11 +26,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="app.metadata" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Content Update="**\*.json" CopyToPublishDirectory="Never" CopyToOutputDirectory="Never" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<AdditionalFiles Include="$(ProjectPath)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="app.metadata" />
 	</ItemGroup>
 
 

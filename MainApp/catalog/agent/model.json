@@ -9,7 +9,14 @@
 		}
 	},
 	"dialogs": {
-		"edit": {			"auto": {"render": "dialog"}
+		"edit": {
+			"auto": { "render": "dialog" }
+		}
+	},
+	"commands": {
+		"fetch": {
+			"type": "auto",
+			"procedure": "fetch"
 		}
 	}
 }

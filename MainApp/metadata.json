@@ -13,7 +13,27 @@
 					"name": "FullName",
 					"index": false
 				}
-			]
+			],
+			"ui": {
+				"index": {
+					"sort": {
+						"order": "name",
+						"dir": "asc"
+					},
+					"columns": [
+						{"field": "Id", "sort": true, "search": "exact" },
+						{"field": "Name", "sort": true, "search": "like" }
+					]
+				},
+				"editItem": {
+					"view": "dialog",
+					"grid": [
+						{"field": "Name", "tabIndex": 1, "required": true },
+						{"field": "Code", "title": "@[Code]", "required": true },
+						{"field": "Memo", "multiline": true }
+					]
+				}
+			}
 		},
 		"Unit": {
 			"schema": "cat",
@@ -23,7 +43,14 @@
 					"name": "Short",
 					"length": 8
 				}
-			]
+			],
+			"ui": {
+				"index": {
+					"fields": [
+
+					]
+				}
+			}
 		},
 		"Item": {
 			"schema": "cat",
@@ -47,6 +74,9 @@
 	"documents": {
 
 	},
+	"journals": [
+
+	],
 	"tables": {
 
 	}

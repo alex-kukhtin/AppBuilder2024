@@ -56,7 +56,7 @@ create table cat.Units
 	[Name] nvarchar(255),
 	[Memo] nvarchar(255),
 	-- Custom fields
-	[Short] nvarchar(8),
+	[Short] nvarchar(8)
 );
 go
 ------------------------------------------------
