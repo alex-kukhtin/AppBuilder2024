@@ -12,14 +12,7 @@
 				{
 					"name": "FullName"
 				}
-			],
-			"ui": {
-				"index": {
-					"fields": [
-
-					]
-				}
-			}
+			]
 		},
 		{
 			"name": "Units",
@@ -43,7 +36,7 @@
 				},
 				{
 					"name": "Unit",
-					"type": "Ref",
+					"type": "Reference",
 					"ref": "Catalog.Units"
 				}
 			]
@@ -85,6 +78,10 @@
 		{
 			"name": "/catalog/agent",
 			"table": "Catalog.Agents"
+		},
+		{
+			"name": "/catalog/item",
+			"table": "Catalog.Items"
 		}
 	]
 }
