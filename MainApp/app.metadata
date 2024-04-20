@@ -45,10 +45,22 @@
 	"documents": [
 		{
 			"name": "Documents",
+			"fields": [
+				{
+					"name": "Agent",
+					"type": "Reference",
+					"ref": "Catalog.Agents"
+				}
+			],
 			"details": [
 				{
 					"name": "Rows",
 					"fields": [
+						{
+							"name": "Item",
+							"type": "Reference",
+							"ref": "Catalog.Items"
+						},
 						{
 							"name": "Qty",
 							"type": "Float"
@@ -81,7 +93,55 @@
 		},
 		{
 			"name": "/catalog/item",
-			"table": "Catalog.Items"
+			"table": "Catalog.Items",
+			"edit": "dialog",
+			"ui": {
+				"index": {
+					"sort": {
+						"field": "Id",
+						"dir": "desc"
+					},
+					"fields": [
+						{
+							"name": "Id",
+							"sort": true,
+							"search": "exact"
+						},
+						{
+							"name": "Name",
+							"sort": true,
+							"search": "like"
+						},
+						{
+							"name": "SKU",
+							"title": "Артикул",
+							"sort": true,
+							"search": "like"
+						},
+						{
+							"name": "BarCode",
+							"title": "Бар-код",
+							"sort": true,
+							"search": "like"
+						},
+						{
+							"name": "Unit",
+							"title": "Од.вим.",
+							"display": "Short"
+						},
+						{
+							"name": "Memo",
+							"sort": true,
+							"maxChars": true,
+							"search": "like"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "/document/invoice",
+			"table": "Document.Documents"
 		}
 	]
 }

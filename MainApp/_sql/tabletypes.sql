@@ -31,4 +31,18 @@ create type cat.[Item.TableType] as table
 	Unit bigint
 )
 go
-
+------------------------------------------------
+drop type if exists doc.[Document.TableType];
+go
+------------------------------------------------
+create type doc.[Document.TableType] as table
+(
+	Id bigint,
+	[Done] bit,
+	[Date] date,
+	[Sum] money,
+	[Memo] nvarchar(255),
+	-- Custom fields
+	[Agent] nvarchar(32)
+)
+go

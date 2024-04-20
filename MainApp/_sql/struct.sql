@@ -77,4 +77,50 @@ create table cat.Items
 		constraint FK_Items_Unit_Units foreign key references cat.Units(Id)
 );
 go
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.SEQUENCES where SEQUENCE_SCHEMA = N'doc' and SEQUENCE_NAME = N'SQ_Documents')
+	create sequence doc.SQ_Documents as bigint start with 1000 increment by 1;
+go
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA=N'doc' and TABLE_NAME=N'Documents')
+create table doc.Documents
+(
+	Id bigint not null
+		constraint DF_Documents_Id default(next value for doc.SQ_Documents)
+		constraint PK_Documents primary key,
+	[Void] bit not null
+		constraint DF_Documents_Void default(0),
+	[Done] bit not null
+		constraint DF_Documents_Done default(0),
+	[Date] date,
+	[Sum] money not null
+		constraint DF_Documents_Sum default(0),
+	[Memo] nvarchar(255),
+	-- Custom fields
+	[Agent] bigint
+		constraint FK_Documents_Agent_Agents foreign key references cat.Agents(Id)
+);
+go
 
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.SEQUENCES where SEQUENCE_SCHEMA = N'doc' and SEQUENCE_NAME = N'SQ_Rows')
+	create sequence doc.SQ_Rows as bigint start with 1000 increment by 1;
+go
+------------------------------------------------
+if not exists(select * from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA=N'doc' and TABLE_NAME=N'Rows')
+create table doc.[Rows]
+(
+	Id bigint not null
+		constraint DF_Rows_Id default(next value for doc.SQ_Rows)
+		constraint PK_Rows primary key,
+	[RowNo] int,
+	[Parent] bigint
+		constraint FK_Rows_Parent_Documents foreign key references doc.Documents(Id),
+	-- Custom fields
+	[Item] bigint
+		constraint FK_Rows_Item_Items foreign key references cat.Items(Id),
+	Qty float,
+	Price float,
+	[Sum] money 
+);
+go

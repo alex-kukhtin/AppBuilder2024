@@ -29,13 +29,19 @@ begin
 		(N'319F639C-2CAB-42ED-810A-42BD2C1980D4', N'FDC45B07-7F1E-4CFC-A53A-828905D297B3', 
 			10, N'@[Agents]',  N'page:/catalog/agent/index/0',  null, null, null, null),
 		(N'E92358BF-CD48-4973-BCB3-FF9D7499015B', N'FDC45B07-7F1E-4CFC-A53A-828905D297B3', 
-			20, N'@[Items]',   N'page:/catalog/item/index/0',  null, null, null, null);
+			20, N'@[Items]',   N'page:/catalog/item/index/0',  null, null, null, null),
 
+		(N'A27FF039-E9F8-4FFD-B3D0-19DFF39D56BD', N'5E614DAA-8A5F-4EC9-BC32-E46FA4ACFA0C',  
+			10, N'@[Sales]',  null, null, null,  null, null),
+
+		(N'62E55B17-743B-4205-8340-6DDF3FC5B07C', N'A27FF039-E9F8-4FFD-B3D0-19DFF39D56BD', 
+			10, N'@[Invoices]',  N'page:/document/invoice/index/0',  null, null, null, null);
 
 	
 	exec a2ui.[Menu.Merge] 1, @menu, @ModuleId;
 end
 go
+
 
 --delete from a2ui.Menu;
 
