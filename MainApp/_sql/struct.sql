@@ -114,8 +114,8 @@ create table doc.[Rows]
 		constraint DF_Rows_Id default(next value for doc.SQ_Rows)
 		constraint PK_Rows primary key,
 	[RowNo] int,
-	[Parent] bigint
-		constraint FK_Rows_Parent_Documents foreign key references doc.Documents(Id),
+	[Document] bigint
+		constraint FK_Rows_Document_Documents foreign key references doc.Documents(Id),
 	-- Custom fields
 	[Item] bigint
 		constraint FK_Rows_Item_Items foreign key references cat.Items(Id),

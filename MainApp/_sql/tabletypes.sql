@@ -43,6 +43,22 @@ create type doc.[Document.TableType] as table
 	[Sum] money,
 	[Memo] nvarchar(255),
 	-- Custom fields
-	[Agent] nvarchar(32)
+	[Agent] bigint
+)
+go
+------------------------------------------------
+drop type if exists doc.[Document.Row.TableType];
+go
+------------------------------------------------
+create type doc.[Document.Row.TableType] as table
+(
+	Id bigint,
+	RowNo int,
+	[Memo] nvarchar(255),
+	-- Custom fields
+	[Item] bigint,
+	[Qty] float,
+	[Price] float,
+	[Sum] money
 )
 go

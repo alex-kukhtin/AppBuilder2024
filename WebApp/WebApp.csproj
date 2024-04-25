@@ -21,7 +21,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="A2v10.Platform" Version="10.1.8275" />
-		<PackageReference Include="A2v10.Web.Assets" Version="10.1.8275" />
+		<PackageReference Include="A2v10.Platform" Version="10.1.8278" />
+		<PackageReference Include="A2v10.Web.Assets" Version="10.1.8278" />
 	</ItemGroup>
 </Project>
