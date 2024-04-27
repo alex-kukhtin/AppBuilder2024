@@ -47,6 +47,10 @@
 			"name": "Documents",
 			"fields": [
 				{
+					"name": "Kind",
+					"length": 16
+				},
+				{
 					"name": "Agent",
 					"type": "Reference",
 					"ref": "Catalog.Agents"
@@ -141,7 +145,10 @@
 		},
 		{
 			"name": "/document/invoice",
-			"table": "Document.Documents"
+			"table": "Document.Documents",
+			"parameters": {
+				"Kind":  "Invoice"
+			}
 		}
 	]
 }

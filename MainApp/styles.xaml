@@ -9,4 +9,10 @@
 		<Setter Property="UserSelect" Value="True"/>
 		<Setter Property="Border" Value="True"/>
 	</Style>
+	<Style x:Key="Taskpad">
+		<Setter Property="Width" Value="22rem"/>
+		<Setter Property="Collapsible" Value="False"/>
+		<Setter Property="Overflow" Value="True"/>
+		<Setter Property="Padding" Value=".5rem,1rem"/>
+	</Style>
 </Styles>

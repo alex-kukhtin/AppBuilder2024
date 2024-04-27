@@ -39,10 +39,12 @@ create type doc.[Document.TableType] as table
 (
 	Id bigint,
 	[Done] bit,
+	[Number] nvarchar(32),
 	[Date] date,
 	[Sum] money,
 	[Memo] nvarchar(255),
 	-- Custom fields
+	[Kind] nvarchar(16),
 	[Agent] bigint
 )
 go
