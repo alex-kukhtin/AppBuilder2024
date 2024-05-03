@@ -27,6 +27,7 @@
 
 	<ItemGroup>
 	  <None Remove="app.metadata" />
+	  <None Remove="_localization\_default.uk.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -39,6 +40,7 @@
 
 	<ItemGroup>
 	  <Content Include="app.metadata" />
+	  <Content Include="_localization\_default.uk.txt" />
 	</ItemGroup>
 
 

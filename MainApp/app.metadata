@@ -66,6 +66,11 @@
 							"ref": "Catalog.Items"
 						},
 						{
+							"name": "Unit",
+							"type": "Reference",
+							"ref": "Catalog.Units"
+						},
+						{
 							"name": "Qty",
 							"type": "Float"
 						},
@@ -76,6 +81,9 @@
 						{
 							"name": "Sum",
 							"type": "Money"
+						},
+						{
+							"name": "Memo"
 						}
 					]
 				}
@@ -84,10 +92,7 @@
 	],
 	"journals": [
 		{
-
-		},
-		{
-
+			"name": "Stock"
 		}
 	],
 	"endpoints": [
@@ -114,29 +119,30 @@
 						{
 							"name": "Name",
 							"sort": true,
+							"lineClamp": 2,
 							"search": "like"
 						},
 						{
 							"name": "SKU",
-							"title": "Артикул",
 							"sort": true,
+							"fit": true,
 							"search": "like"
 						},
 						{
 							"name": "BarCode",
-							"title": "Бар-код",
 							"sort": true,
+							"fit":  true,
 							"search": "like"
 						},
 						{
 							"name": "Unit",
-							"title": "Од.вим.",
 							"display": "Short"
 						},
 						{
 							"name": "Memo",
+							"title": "Примітка",
 							"sort": true,
-							"maxChars": true,
+							"lineClamp": 2,
 							"search": "like"
 						}
 					]
@@ -145,9 +151,43 @@
 		},
 		{
 			"name": "/document/invoice",
+			"title": "@[Invoice]",
 			"table": "Document.Documents",
 			"parameters": {
-				"Kind":  "Invoice"
+				"Kind": "Invoice"
+			},
+			"ui": {
+				"edit": {
+					"fields": [
+						{ "name": "Date", "default": "du.today()" },
+						{ "name": "Number" },
+						{ "name": "Sum", "computed": "this.Rows.$sum(r => r.Sum)" },
+						{ "name": "Agent" },
+						{
+							"name": "Memo",
+							"multiline": true
+						}
+					],
+					"details": [
+						{
+							"name": "Rows",
+							"fields": [
+								{ "name": "RowNo" },
+								{ "name": "Item.SKU", "width": "10rem","title": "@[Article]"  },
+								{ "name": "Item", "required": true },
+								{ "name": "Unit", "width": "7rem", "display": "Short" },
+								{ "name": "Qty", "default": "1", "total": true },
+								{ "name": "Price" },
+								{
+									"name": "Sum",
+									"Computed": "this.Price * this.Qty",
+									"total": true
+								},
+								{ "name": "Memo" }
+							]
+						}
+					]
+				}
 			}
 		}
 	]

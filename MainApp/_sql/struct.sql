@@ -119,6 +119,8 @@ create table doc.[Rows]
 	-- Custom fields
 	[Item] bigint
 		constraint FK_Rows_Item_Items foreign key references cat.Items(Id),
+	[Unit] bigint
+		constraint FK_Rows_Unit_Units foreign key references cat.Units(Id),
 	Qty float,
 	Price float,
 	[Sum] money 

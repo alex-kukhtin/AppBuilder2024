@@ -1,0 +1,34 @@
+﻿@Items=Об'єкти обліку
+@Item=Об'єкт обліку
+@Agents=Контрагенти
+@Agent=Контрагент
+@Projects=Проєкти
+@Project=Проєкт
+@Store=Склад
+@Stores=Склади
+@Unit=Од. вим.
+@Units=Одиниці виміру
+;
+@Invoices=Рахунки
+@Invoice=Рахунок
+;
+@Id=#
+@Number=Номер
+@Period=Період
+@SKU=Артикул
+@BarCode=Штрихкод
+@Short=Скорочення
+;
+@Apply=Провести
+@AddRow=Додати рядок
+;
+@Filter.Agent.All=<Всі контрагенти>
+;
+@Agent.Browse=Вибір контрагента
+@Item.Browse=Вибір об'єкта обліку
+@Project.Browse=Вибір проєкта
+@Store.Browse=Вибір складу
+@Unit.Browse=Вибір одиниці виміру
+;
+@Error.Required=Обов'язкове поле
+
